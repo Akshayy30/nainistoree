@@ -61,7 +61,7 @@ button { font-family:inherit; cursor:pointer; border:none; }
 .nav-profile:hover { border-color:var(--gold); }
 
 /* HERO */
-.hero { background:linear-gradient(160deg,rgba(175,90,5,0.88) 0%,rgba(215,125,8,0.83) 40%,rgba(230,165,15,0.78) 70%,rgba(175,95,5,0.90) 100%),url('https://images.unsplash.com/photo-1626016894620-a7f85e45d2e2?w=1600&q=85') center/cover no-repeat; position:relative; overflow:visible; padding:48px 0 0; margin-bottom:28px; }
+.hero { background:linear-gradient(160deg,rgba(175,90,5,0.45) 0%,rgba(215,125,8,0.40) 40%,rgba(230,165,15,0.35) 70%,rgba(175,95,5,0.50) 100%),url('https://hblimg.mmtcdn.com/content/hubble/img/desttvimg/mmt/destination/t_trp/m_Nainital_tv_destination_img_4_l_795_1192.jpg?im=Resize=(1000,532)') center/cover no-repeat; position:relative; overflow:visible; padding:48px 0 0; margin-bottom:28px; }
 .hero::after { content:''; position:absolute; bottom:-22px; left:-2%; width:104%; height:36px; background:linear-gradient(180deg,#C47A08 0%,#A86005 100%); border-radius:0 0 50% 50% / 0 0 36px 36px; z-index:2; }
 .hero-inner { max-width:var(--max-w); margin:0 auto; padding:0 40px; }
 .hero-top-row { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:4px; }
