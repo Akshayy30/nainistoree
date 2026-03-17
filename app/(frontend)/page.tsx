@@ -147,14 +147,6 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero">
-        <video
-          className="hero-video"
-          src="https://Nainistore.b-cdn.net/IMG_9029.MOV"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
         <div className="hero-overlay" />
         <div className="hero-inner">
           <div className="hero-top-row">
