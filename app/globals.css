@@ -114,7 +114,7 @@ button { font-family:inherit; cursor:pointer; border:none; }
 .cat-card:hover { border-color:var(--gold); transform:translateY(-6px); box-shadow:0 12px 30px rgba(212,134,10,0.12); }
 .cat-card.active { border-color:var(--gold); background:linear-gradient(135deg, white, var(--gold-pale)); box-shadow:0 8px 24px rgba(212,134,10,0.15); }
 .cat-card-icon { font-size:40px; filter:drop-shadow(0 4px 6px rgba(0,0,0,0.08)); }
-.cat-card-img { width: 64px; height: 64px.caor.cr-radius: 50%; background-size: cover; background-position: center; box-shadow: 0 6px 16px rgba(0,0,0,0.1); margin-bottom: 4px; border: 2px solid white; }
+.cat-card-img { width: 64px; height: 64px; border-radius: 50%; background-size: cover; background-position: center; box-shadow: 0 6px 16px rgba(0,0,0,0.1); margin-bottom: 4px; border: 2px solid white; }
 .cat-card-label { font-size:14px; font-weight:700; color:var(--slate); line-height:1.2; font-family:'Libre Caslon Display',Georgia,serif; }
 .cat-card-new { position:absolute; top:-6px; right:-6px; background:var(--red); color:white; font-size:9px; font-weight:800; padding:4px 8px; border-radius:12px; font-family:'Libre Caslon Display',Georgia,serif; box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
 

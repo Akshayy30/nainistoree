@@ -55,12 +55,12 @@ export default function Home() {
   const navWrapRef = useRef<HTMLDivElement>(null)
 
   const navMatches = navQ.trim()
-    ? SEARCH_ITEMS.filter(i => i.name.toLowerCase().includes(navQ.toLowerCase()) || i.store.toLowerCase().includes(navQ.toLowerCase())).slice(0, 7)
+    ? SEARCH_ITEMS.filter((i: any) => i.name.toLowerCase().includes(navQ.toLowerCase()) || i.store.toLowerCase().includes(navQ.toLowerCase())).slice(0, 7)
     : []
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => setSession(session))
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => setSession(session))
+    supabase.auth.getSession().then(({ data: { session } }) => setSession(session as any))
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e: any, session: any) => setSession(session as any))
     
     const h = (e: MouseEvent) => { if (navWrapRef.current && !navWrapRef.current.contains(e.target as Node)) setNavSugOpen(false) }
     document.addEventListener('mousedown', h)
@@ -111,7 +111,7 @@ export default function Home() {
               <span className="nav-search-mic">🎙️</span>
             </div>
             <div className={`nav-suggestions${navSugOpen && navMatches.length ? ' open' : ''}`}>
-              {navMatches.map((item, i) => (
+              {navMatches.map((item: any, i: number) => (
                 <div key={i} className="sug-item" onClick={() => { setNavQ(item.name); setNavSugOpen(false) }}>
                   <span className="sug-icon">{item.icon}</span>
                   <div className="sug-info">
@@ -174,7 +174,7 @@ export default function Home() {
           </div>
 
           <div className="hero-cat-tabs">
-            {CATEGORIES.map(cat => (
+            {CATEGORIES.map((cat: any) => (
               <button key={cat.id} className={`hero-cat-tab${activeHeroCat === cat.id ? ' active' : ''}`} onClick={() => setActiveHeroCat(cat.id)}>
                 <span className="hero-cat-icon" style={{ position: 'relative' }}>
                   {cat.icon}
@@ -208,7 +208,7 @@ export default function Home() {
               <h2 className="section-title">Shop by Category</h2>
             </div>
             <div className="cat-grid">
-              {CATEGORIES.map(cat => (
+              {CATEGORIES.map((cat: any) => (
                 <div key={cat.id} className={`cat-card${activeCat === cat.id ? ' active' : ''}`} onClick={() => setActiveCat(cat.id)}>
                   {cat.isNew && <span className="cat-card-new">New</span>}
                   <div className="cat-card-img" style={{ backgroundImage: `url(${cat.image})` }}></div>
@@ -243,7 +243,7 @@ export default function Home() {
               <a href="#" className="section-link">View all stores →</a>
             </div>
             <div className="stores-grid">
-              {STORES.map(store => (
+              {STORES.map((store: any) => (
                 <div key={store.id} className={`store-card${activeStore === store.id ? ' active' : ''}`} onClick={() => setActiveStore(store.id)}>
                   {store.featured && <div className="store-card-featured">⭐ Popular</div>}
                   <div className="store-card-img" style={{ backgroundImage: `url(${store.image})` }}></div>
@@ -263,11 +263,11 @@ export default function Home() {
               <a href="#" className="section-link">Browse all →</a>
             </div>
             <div className="bestsellers-grid">
-              {BESTSELLERS.map((g, i) => {
+              {BESTSELLERS.map((g: any, i: number) => {
                 return (
                   <div key={g.name} className={`bestseller-card fade-up d${(i % 3) + 1} bs-animate-hover`}>
                     <div className="bestseller-imgs">
-                      {g.images?.map((imgUrl, j) => (
+                      {g.images?.map((imgUrl: any, j: number) => (
                         <div 
                           key={j} 
                           className="bestseller-img-cell bs-animate-icon" 
@@ -301,7 +301,7 @@ export default function Home() {
               <a href="#" className="section-link">See all products →</a>
             </div>
             <div className="products-grid">
-              {PRODUCTS.map(p => {
+              {PRODUCTS.map((p: any) => {
                 const qty = cart[p.id]?.qty ?? 0
                 return (
                   <div key={p.id} className="product-card">
