@@ -1,7 +1,7 @@
 'use client'
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { supabase } from '@/lib/supabase'
-import { SEARCH_ITEMS, PRODUCTS, STORES, CATEGORIES, BESTSELLERS } from '@/lib/data'
+import { supabase } from '../../lib/supabase'
+import { SEARCH_ITEMS, PRODUCTS, STORES, CATEGORIES, BESTSELLERS } from '../../lib/data'
 
 /* ─── CART ─── */
 interface CartItem { id: string; icon: string; name: string; price: number; qty: number }
@@ -59,7 +59,7 @@ export default function Home() {
     : []
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => setSession(session as any))
+    supabase.auth.getSession().then(({ data: { session } }: any) => setSession(session as any))
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_e: any, session: any) => setSession(session as any))
     
     const h = (e: MouseEvent) => { if (navWrapRef.current && !navWrapRef.current.contains(e.target as Node)) setNavSugOpen(false) }
